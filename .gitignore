@@ -350,4 +350,6 @@ MigrationBackup/
 .ionide/
 
 /node_modules
+/dist
 .vscode
+.angular
