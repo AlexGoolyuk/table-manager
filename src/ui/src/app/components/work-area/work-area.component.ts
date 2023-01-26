@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
+import { Component, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
@@ -10,12 +9,6 @@ import {MatTableDataSource} from '@angular/material/table';
 export class WorkAreaComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
-  //@ViewChild(MatPaginator) paginator: MatPaginator;
-
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
 }
 
 export interface PeriodicElement {

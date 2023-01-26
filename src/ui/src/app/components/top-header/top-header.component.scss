@@ -1,5 +1,13 @@
 .wrapper {
+    padding: 5px 0px;
     display: flex;
     width: 100%;
-    background-color: red;
+    background-color: none;
+    justify-content: flex-end;
+    .button {
+        border: 1px solid black;
+        margin-right: 10px;
+        display: flex;
+        float: right;
+    }
 }
