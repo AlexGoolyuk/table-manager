@@ -16,10 +16,10 @@ namespace api.Controllers
 
         //Create/add a new
         [HttpPost("AddBook")]
-        public IActionResult AddBook([FromBody]Book book)
+        public async Task<IActionResult> AddBook([FromBody]Book book)
         {
             this._bookService.AddBook(book);
-            return Ok("Added");
+            return await Task.FromResult(Ok("Added"));
         }
 
         //Read all
