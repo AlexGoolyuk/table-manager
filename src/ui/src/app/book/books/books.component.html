@@ -1,0 +1,30 @@
+<h1>Book summaries</h1>
+
+<p *ngIf="!books"><b>Loading...</b></p>
+
+<table class="table table-striped" *ngIf="books">
+    <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Author</th>
+        <th>Rate</th>
+        <th>Date started</th>
+        <th>Date read</th>
+        <th>Status</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td>{{book.description | slice: 0:50}}..</td>
+            <td>{{book.author}}</td>
+            <td>{{book.rate}}</td>
+            <td>{{book.dateStart | date: "dd/MM/yy"}}</td>
+            <td>{{book.dateRead | date: "dd/MM/yy"}}</td>
+            <td>{{book.dateRead ? "Read" : book.dateStart ? "In Progress" : "Not Started"}}</td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </tbody>
+</table>
