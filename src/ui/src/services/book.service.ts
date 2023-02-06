@@ -20,4 +20,19 @@ export class BookService {
       console.log(resp);
     });
   }
+
+  getBookById(id: number) {
+    return this.http.get<Book>(this._baseURL + "/GetBook/" + id);
+  }
+
+  updateBook(book: Book) {
+    return this.http.put(this._baseURL + "/UpdateBook/" + book.id, book);
+  }
+
+  deleteBook(id?: number) {
+    return this.http.delete(this._baseURL + "/DeleteBook/" + id)
+    .subscribe(resp => {
+      console.log(resp);
+    });
+  }
 }

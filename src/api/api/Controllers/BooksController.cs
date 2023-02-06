@@ -52,7 +52,7 @@ namespace api.Controllers
         public IActionResult DeleteBook(int id)
         {
             this._bookService.DeleteBook(id);
-            return Ok();
+            return Ok("ok");
         }
 
         //GetbyId

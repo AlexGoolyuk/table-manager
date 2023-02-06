@@ -31,7 +31,7 @@ namespace api.Data.Services
 
         public void UpdateBook(int id, Book book)
         {
-            var oldBook = Data.Books.First(x => x.Id == id);
+            var oldBook = Data.Books.FirstOrDefault(x => x.Id == id);
             if(oldBook != null)
             {
                 oldBook.Title= book.Title;

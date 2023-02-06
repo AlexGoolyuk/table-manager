@@ -23,7 +23,8 @@
             <td>{{book.dateRead | date: "dd/MM/yy"}}</td>
             <td>{{book.dateRead ? "Read" : book.dateStart ? "In Progress" : "Not Started"}}</td>
             <td>
-                Actions
+                <button type="button" (click)="onShow(book)">Show</button>
+                <button type="button" (click)="onDelete(book.id)">Delete</button>
             </td>
         </tr>
     </tbody>

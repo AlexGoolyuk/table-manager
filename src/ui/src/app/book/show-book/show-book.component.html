@@ -1,1 +1,39 @@
-<p>show-book works!</p>
+<div class="wrapper">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" [(ngModel)]="book.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput placeholder="Author" [(ngModel)]="book.author">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" [(ngModel)]="book.description">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="book.dateStart">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Date Read</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="newBook.dateRead">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+        <mat-label>Rate</mat-label>
+        <input matInput type="number" placeholder="Rate" [(ngModel)]="book.rate">
+    </mat-form-field>
+
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancelClick()">Cancel</button>
+        <button mat-button cdkFocusInitial [mat-dialog-close]="book">Update</button>
+    </div>
+</div>
