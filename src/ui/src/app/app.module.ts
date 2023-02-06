@@ -27,6 +27,11 @@ import { UpdateBookComponent } from './book/update-book/update-book.component';
 import { BookService } from 'src/services/book.service';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { UsersComponent } from './components/main-table/users/users.component';
+import { AddUserComponent } from './components/main-table/add-user/add-user.component';
+import { DeleteUserComponent } from './components/main-table/delete-user/delete-user.component';
+import { ShowUserComponent } from './components/main-table/show-user/show-user.component';
+import { UpdateUserComponent } from './components/main-table/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { LoginComponent } from './components/login/login.component';
     ShowBookComponent,
     UpdateBookComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    AddUserComponent,
+    DeleteUserComponent,
+    ShowUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
