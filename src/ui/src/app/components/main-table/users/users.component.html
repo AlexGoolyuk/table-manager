@@ -1,1 +1,30 @@
-<p>users works!</p>
+<div class="wrapper">
+    <h1></h1>
+
+<p *ngIf="!users"><b>Loading...</b></p>
+
+<table class="table table-striped" *ngIf="users">
+    <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Author</th>
+        <th>Rate</th>
+        <th>Date started</th>
+        <th>Date read</th>
+        <th>Status</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.adress | slice: 0:50}}..</td>
+            <td>{{user.status}}</td>
+            <td>{{user.birthDate | date: "dd/MM/yy"}}</td>
+            <td>
+                <button type="button" (click)="onShow(user)">Show</button>
+                <button type="button" (click)="onDelete(user.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

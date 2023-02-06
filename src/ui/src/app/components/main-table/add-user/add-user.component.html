@@ -1,1 +1,27 @@
-<p>add-user works!</p>
+<div class="wrapper">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)]="newUser.name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Adress</mat-label>
+        <input matInput placeholder="Adress" [(ngModel)]="newUser.adress">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <input matInput placeholder="Status" [(ngModel)]="newUser.status">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="newUser.birthDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancelClick()">Cancel</button>
+        <button mat-button cdkFocusInitial [mat-dialog-close]="newUser">Add</button>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { User } from 'src/app/interfaces/user';
+import { FunctionalHeaderComponent } from '../../functional-header/functional-header.component';
 
 @Component({
   selector: 'app-add-user',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AddUserComponent {
 
+  newUser: User = {};
+
+  constructor(public dialogRef: MatDialogRef<FunctionalHeaderComponent>) { }
+
+  onCancelClick(): void {
+    this.dialogRef.close();
+  }
 }

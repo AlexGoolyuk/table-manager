@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { NewBookComponent } from 'src/app/book/new-book/new-book.component';
-import { Book } from 'src/app/interfaces/book';
-import { BookService } from 'src/services/book.service';
+import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/services/user.service';
+import { AddUserComponent } from '../main-table/add-user/add-user.component';
 
 @Component({
   selector: 'app-functional-header',
@@ -13,15 +13,15 @@ import { BookService } from 'src/services/book.service';
 export class FunctionalHeaderComponent {
 
 
-  constructor(private router: Router, private dialog: MatDialog, private service: BookService) { }
+  constructor(private router: Router, private dialog: MatDialog, private service: UserService) { }
 
-  addClick() : void {
-    const dialogRef = this.dialog.open(NewBookComponent);
+  addClick(): void {
+    const dialogRef = this.dialog.open(AddUserComponent);
 
-    dialogRef.afterClosed().subscribe((result: Book) => {
+    dialogRef.afterClosed().subscribe((result: User) => {
       console.log('The dialog was closed');
 
-      this.service.addBook(result);
+      this.service.add(result);
     });
   }
   homeClick() {
