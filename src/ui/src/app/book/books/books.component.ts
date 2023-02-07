@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -32,15 +33,15 @@ export class BooksComponent implements OnInit {
   onShow(book: Book) {
 
     const dialogRef = this.dialog.open(ShowBookComponent, {
-      data: {book: book}
+      data: book
     });
 
-    dialogRef.afterClosed().subscribe((result: Book) => {
-      console.log('The dialog was closed');
-      this.service.updateBook(result)
-      .subscribe(res => {
-        this.router.navigate(["/home"])
-      });
+    dialogRef.afterClosed().subscribe((result?: FormGroup) => {
+      console.log(result?.value);
+      if(!!result) {
+        this.service.updateBook(result?.value);
+      }
+      this.router.navigate(["/home"]);
     });
   }
 

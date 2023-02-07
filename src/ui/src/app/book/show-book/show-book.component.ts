@@ -17,22 +17,18 @@ export class ShowBookComponent implements OnInit {
 
   constructor(private service: BookService, private route: ActivatedRoute, private fb: FormBuilder,
     public dialogRef: MatDialogRef<BooksComponent>,
-    @Inject(MAT_DIALOG_DATA) public book: Book,) {}
+    @Inject(MAT_DIALOG_DATA) public bookIn: Book,) {}
 
   ngOnInit(): void {
-    // this.service.getBookById(this.route.snapshot.params['id'])
-    // .subscribe(data => {
-    //   this.book = data;
-    // });
 
     this.updateBookForm = this.fb.group({
-      id: [this.book.id],
-      title: [this.book.title, Validators.required],
-      author: [this.book.author, Validators.required],
-      description: [this.book.description, Validators.compose([Validators.required, Validators.minLength(5)])],
-      rate: [this.book.rate],
-      dateStart: [this.book.dateStart],
-      dateRead: [this.book.dateRead]
+      id: [this.bookIn.id],
+      title: [this.bookIn.title, Validators.required],
+      author: [this.bookIn.author, Validators.required],
+      description: [this.bookIn.description, Validators.compose([Validators.required, Validators.minLength(5)])],
+      rate: [this.bookIn.rate],
+      dateStart: [this.bookIn.dateStart],
+      dateRead: [this.bookIn.dateRead]
     })
   }
 

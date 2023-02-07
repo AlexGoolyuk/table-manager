@@ -1,39 +1,42 @@
-<div class="wrapper" [formGroup]="updateBookForm">
-    <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="Title" name="title" ngDefaultControl >
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Author</mat-label>
-        <input matInput placeholder="Author" name="author" ngDefaultControl >
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
-        <input matInput placeholder="Description" name="description" ngDefaultControl >
-    </mat-form-field>
+<div class="wrapper">
+    <form [formGroup]="updateBookForm" class="wrapper">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" formControlName="title" ngDefaultControl>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Author</mat-label>
+            <input matInput placeholder="Author" formControlName="author" ngDefaultControl >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Description" formControlName="description" ngDefaultControl >
+        </mat-form-field>
+    
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="startDate" ngDefaultControl >
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
 
-    <mat-form-field appearance="fill">
-        <mat-label>Start Date</mat-label>
-        <input matInput [matDatepicker]="picker" name="startDate" ngDefaultControl >
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Date Read</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="newBook.dateRead">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
 
-    <!-- <mat-form-field appearance="fill">
-        <mat-label>Date Read</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="newBook.dateRead">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field> -->
-
-    <mat-form-field appearance="fill">
-        <mat-label>Rate</mat-label>
-        <input matInput type="number" placeholder="Rate" name="rate" ngDefaultControl >
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Rate</mat-label>
+            <input matInput type="number" placeholder="Rate" formControlName="rate" ngDefaultControl >
+        </mat-form-field>
 
 
-    <div mat-dialog-actions>
-        <button mat-button (click)="onCancelClick()">Cancel</button>
-        <button mat-button cdkFocusInitial [mat-dialog-close]="updateBookForm">Update</button>
-    </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onCancelClick()">Cancel</button>
+            <button mat-button cdkFocusInitial [mat-dialog-close]="updateBookForm">Update</button>
+        </div>
+    </form>
+
 </div>
