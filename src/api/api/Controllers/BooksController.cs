@@ -19,7 +19,7 @@ namespace api.Controllers
         public async Task<IActionResult> AddBook([FromBody]Book book)
         {
             this._bookService.AddBook(book);
-            return await Task.FromResult(Ok("Added"));
+            return await Task.FromResult(Ok());
         }
 
         //Read all
@@ -41,18 +41,18 @@ namespace api.Controllers
 
         //Update
         [HttpPut("UpdateBook/{id}")]
-        public IActionResult UpdateBook(int id, [FromBody]Book book)
+        public async Task<IActionResult> UpdateBook(int id, [FromBody]Book book)
         {
             this._bookService.UpdateBook(id, book);
-            return Ok();
+            return await Task.FromResult(Ok());
         }
 
         //Delete
         [HttpDelete("DeleteBook/{id}")]
-        public IActionResult DeleteBook(int id)
+        public async Task<IActionResult> DeleteBook(int id)
         {
             this._bookService.DeleteBook(id);
-            return Ok("ok");
+            return await Task.FromResult(Ok());
         }
 
         //GetbyId

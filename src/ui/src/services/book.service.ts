@@ -15,10 +15,7 @@ export class BookService {
   }
 
   addBook(book: Book) {
-    return this.http.post(this._baseURL+"/AddBook/", book)
-    .subscribe(resp => {
-      console.log(resp);
-    });
+    return this.http.post(this._baseURL+"/AddBook/", book);
   }
 
   getBookById(id: number) {
@@ -30,9 +27,6 @@ export class BookService {
   }
 
   deleteBook(id?: number) {
-    return this.http.delete(this._baseURL + "/DeleteBook/" + id)
-    .subscribe(resp => {
-      console.log(resp);
-    });
+    return this.http.delete(this._baseURL + "/DeleteBook/" + id);
   }
 }

@@ -1,6 +1,23 @@
+.wrapper {
+    
 
+    .botton-section {
+        padding: 5px 0px;
+        display: flex;
+        width: 100%;
+        background-color: rgb(42, 128, 165);
+        justify-content: center;
+    }
 
-.table {
-    width: 100%;
-    text-align: left;
+    .button {
+        border: 1px solid black;
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .table {
+        width: 100%;
+        text-align: left;
+    }
 }
+

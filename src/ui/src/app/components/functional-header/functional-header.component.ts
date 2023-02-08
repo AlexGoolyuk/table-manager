@@ -22,11 +22,10 @@ export class FunctionalHeaderComponent {
       console.log('The dialog was closed');
 
       this.service.add(result);
-    },error => {
-      console.log(error);
     });
   }
   homeClick() {
     this.router.navigateByUrl('/home');
   };
+  
 }
