@@ -33,6 +33,9 @@ import { AddUserComponent } from './components/main-table/add-user/add-user.comp
 import { DeleteUserComponent } from './components/main-table/delete-user/delete-user.component';
 import { ShowUserComponent } from './components/main-table/show-user/show-user.component';
 import { UpdateUserComponent } from './components/main-table/update-user/update-user.component';
+import { StoreModule } from '@ngrx/store';
+import { UserReducer } from './store/user.reducer';
+import { UserEffects } from './store/user.effects';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,9 @@ import { UpdateUserComponent } from './components/main-table/update-user/update-
     MatInputModule,
     HttpClientModule,
     ReactiveFormsModule,
-    EffectsModule
+    EffectsModule,
+    StoreModule.forFeature( 'appState', UserReducer),
+    EffectsModule.forRoot([UserEffects])
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
